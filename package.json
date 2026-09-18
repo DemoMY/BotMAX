@@ -1,7 +1,7 @@
 {
   "name": "botmax",
   "version": "0.1.0",
-  "description": "BotMAX — add your bot to MAX. Exposes the MAX messenger (ex-VK Messenger) as a Telegram Bot API endpoint: run OpenClaw / Hermes / any grammY bot in MAX with one command.",
+  "description": "BotMAX — добавь своего бота в MAX (бывший VK Messenger): Telegram Bot API поверх официального MAX Bot API. OpenClaw / Hermes / любой grammY-бот в MAX одной командой.",
   "keywords": [
     "max",
     "messenger",
