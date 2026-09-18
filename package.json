@@ -1,0 +1,43 @@
+{
+  "name": "botmax",
+  "version": "0.1.0",
+  "description": "BotMAX — add your bot to MAX. Exposes the MAX messenger (ex-VK Messenger) as a Telegram Bot API endpoint: run OpenClaw / Hermes / any grammY bot in MAX with one command.",
+  "keywords": [
+    "max",
+    "messenger",
+    "vk",
+    "telegram",
+    "bot-api",
+    "grammy",
+    "openclaw",
+    "bridge",
+    "chatbot"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "bin": {
+    "botmax": "bridge.js"
+  },
+  "main": "bridge.js",
+  "files": [
+    "bridge.js",
+    "certs/",
+    "install.sh",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node --test bridge.menu.test.js bridge.media.test.js",
+    "start": "node bridge.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DemoMY/BotMAX.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DemoMY/BotMAX/issues"
+  },
+  "homepage": "https://github.com/DemoMY/BotMAX"
+}

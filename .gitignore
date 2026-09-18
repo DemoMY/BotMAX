@@ -1,0 +1,13 @@
+node_modules/
+*.log
+.DS_Store
+
+# local runtime state — never commit
+state.json
+.env
+
+# editor/OS noise
+*.swp
+.idea/
+.vscode/
+npm-debug.log*
