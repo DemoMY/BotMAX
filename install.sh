@@ -141,9 +141,13 @@ HAS_OPENCLAW=0
 if [ -f "$OPENCLAW_JSON" ]; then HAS_OPENCLAW=1; fi
 if [ "$HAS_OPENCLAW" = "1" ]; then
   info "OpenClaw config found at $OPENCLAW_JSON"
-  PATCH_OUT=$(node "$INSTALL_DIR/scripts/openclaw-patch.js" "$OPENCLAW_JSON" \
-    --apiRoot "http://127.0.0.1:${BRIDGE_PORT}" --botToken "9:botmax" $([ "$FORCE" = "1" ] && echo --force)) || true
-  PATCH_EC=$?
+  PATCH_EC=1
+  if PATCH_OUT="$(node "$INSTALL_DIR/scripts/openclaw-patch.js" "$OPENCLAW_JSON" \
+    --apiRoot "http://127.0.0.1:${BRIDGE_PORT}" --botToken "9:botmax" $([ "$FORCE" = "1" ] && echo --force))"; then
+    PATCH_EC=0
+  else
+    PATCH_EC=$?
+  fi
   if [ "$PATCH_EC" = "0" ]; then
     printf '%s\n' "$PATCH_OUT"
     if systemctl --user list-unit-files | grep -q '^openclaw-gateway.service '; then
